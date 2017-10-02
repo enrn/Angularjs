@@ -1,15 +1,19 @@
-<html>
-<head>
-    <title>
-    Hello</title></head>
+<html ng-app="myFirstApp">
+<head >
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+     <title> Hello</title>
+    </head>
 
     <body>
     <h1>Welcome this is test </h1>
-        <h2>this is modified line and tested again  save</h2>
-        <h3>This is third time to commit..</h3>
+        <div ng-controller="myFirstController">
+            
+        <input type="text" ng-model="name" ng-keyup="displayValue()" />
+           This is my name: {{name}} with Value: {{totalCount}}
+            
+        </div>
     </body>
-
-
-
 
 </html>
