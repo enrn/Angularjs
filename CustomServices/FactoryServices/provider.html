@@ -1,0 +1,23 @@
+<html ng-app="myShopping">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="appProvider.js"></script>
+    <title>
+    Creating Customized Service using Factory</title>
+    </head>
+    <body>
+           <h3>Add items ..Max limit 4</h3>
+          <div ng-controller="ShoppingList2 as list2">
+        <input type="text" ng-model="list2.Iname" placeholder="name">
+            <input type="text" ng-model="list2.Iqty" placeholder="quantity">
+              
+            <button ng-click="list2.addItem()">Add to List2</button><br>
+            <ul>
+            <li ng-repeat="item in list2.items">{{item.name}} of {{item.qty}}
+                <button ng-click="list2.removeItem($index);">Remove</button></li>
+            </ul>
+             <div ng-hide="!list2.errorMessage">Error: {{list2.errorMessage}}</div>
+        </div>
+    
+    </body>
+</html>

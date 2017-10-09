@@ -1,0 +1,27 @@
+<html ng-app="ShoppingListCheckOff">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>This is exam 2 module</title>
+    </head>
+    
+    <body>
+    <div ng-controller="ToBuyController as buy">
+        <h2>List of Items to buy</h2>
+        <ul>
+        <li ng-repeat="item in buy.items">{{item.name}} of {{item.quantity}}
+            <button ng-click="buy.removeItem($index)">Remove</button></li></ul>
+        
+         <div ng-hide="!buy.errorMessage">Error: {{buy.errorMessage}}</div>
+    </div>
+        <div ng-controller="AlreadyBoughtController as already">
+        <h2>Items Bought</h2>
+            <ul>
+            <li ng-repeat="item in already.items">{{item.quantity}} of {{item.name}}</li>
+            </ul>
+        </div>
+    
+    
+    </body>
+
+</html>

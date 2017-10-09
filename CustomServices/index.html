@@ -1,0 +1,40 @@
+<html ng-app="MyShopping">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>
+    Creating Customized Service</title>
+    </head>
+    <body>
+        
+        <div ng-controller="ShoppingController as itemAdder">
+            <input type="text" ng-model="itemAdder.itemName" placeholder="item Name"><br>
+            <input type="text" ng-model="itemAdder.itemQuantity" placeholder="Quantity"><br>
+            <button ng-click="itemAdder.addItem();">Add Item</button>
+        
+        </div>
+    <div ng-controller="ShoppingListShowController as showList">
+        <ul>
+            <li ng-repeat="item in showList.items">
+            
+            {{item.quantity}} of {{item.name}}
+                <button ng-click="showList.removeItem($index)">Remove</button>
+            </li>
+            
+            </ul>
+        
+        
+        </div>
+    <p>Use controller to
+        <li>set initial state of $scope</li>
+        <li>Add behaviour to the scope</li></p>
+        <p>Do not use Controller</p>
+        <ul>
+        <li>handle business logic directly</li>
+        <li>To share code with another controller</li>
+        </ul>
+        <p>So..custom service is necessary to address these things....which are singleton in nature and lazly instantiated
+            .
+        </p>
+    </body>
+</html>

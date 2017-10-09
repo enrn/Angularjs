@@ -1,0 +1,31 @@
+<html ng-app="DataBindApp">
+<head>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Data Binding</title>
+    </head>
+    <body>
+    <h2>1way/2 way/ 1 time Data binding</h2>
+    <div ng-controller="DataBindController">
+        <button ng-click="setFullName()">Set Full Name</button>
+        Full name :{{ :: fullName}}
+         <button ng-click="logFirstName()">Log First Name</button>
+        
+        <div>
+        <button ng-click="logFullName()">Log Full Name</button>
+        </div>
+        <div>
+       <input type="text" ng-model="firstName">
+        </div>
+        
+        </div>
+        <div>
+        So let's summarize. The 2-way binding that is set up with the ng-model attribute on an input element means a couple of things. It means that Angular sets up a listener for change to the value on the input element and any change to that automatically gets updated to the property on the $scope. The second thing it means is that any direct update to the property, like inside of a controller, any direct update to the property value is automatically updated in UI as well. And obviously that's done using a watcher. 
+10:45
+1-way binding on the other hand, automatically set up by double curly braces around the property, means only one thing. The direct update to the property value inside a controller or something similar is automatically updated in the UI and the watcher still stays. That's the contrast a 1-time binding which looks very similar to the 1-way binding that is set up with the double curly braces and double colons in front of the property name. And what that means is, the initialized value, not any value, but only the initialized value of a property, is automatically updated in the UI. And the watcher for that property is then automatically removed by Angular, so the user interface never gets updated with any updates to that property again. 
+        </div>
+    
+    </body>
+
+
+</html>
